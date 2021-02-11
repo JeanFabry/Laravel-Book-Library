@@ -33,6 +33,7 @@
                                                 email
                                             </th>
                                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Invoice Number
                                             </th>
 
                                         </tr>
@@ -59,13 +60,18 @@
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                 {{ $book->user->email }}
                                             </td>
+                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                {{ $book->invoice_number }}
+                                            </td>
                                             <!-- <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                 <a href="{{route('main.show',$book->id)}}" class="text-indigo-600 hover:text-indigo-900">Delete</a>
                                             </td> -->
                                             @endforeach
                                             <!-- More items... -->
                                     </tbody>
+
                                 </table>
+                                <span class="py-12 my-12">{{$rents->links()}}</span>
                             </div>
                         </div>
                     </div>

@@ -15,15 +15,8 @@ class RentController extends Controller
      */
     public function index()
     {   
-        $rents = Rent::all();
+        $rents = Rent::paginate(20);
         return view('rents.rentAll', ['rents' => $rents]);
-
-        // $books = Book::all();
-        // $user = auth()->user()->user_rights;
-        // return view("/dashboard", [
-        //     'books' => $books,
-        //     'user' => $user,
-        // ]);
     }
 
     /**
