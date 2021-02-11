@@ -17,8 +17,7 @@ Thus, renters and Librarians have access to a different interface when entering 
 
 - Organize our code using the MVC protocole.
 
-### Pre-requisite :bowtie:
-
+### Pre-requisite
 - knowledges in **PHP**
 - knowledges in **Laravel**
 - knowledges in **MySQL** & **PhpMyAdmin**
