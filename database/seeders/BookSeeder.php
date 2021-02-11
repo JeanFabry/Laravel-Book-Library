@@ -15,6 +15,7 @@ class BookSeeder extends CsvSeeder
         $this->file = '/database/seeds/csvs/books.csv';
         $this->delimiter = ',';
         $this->tablename = 'books';
+        $this->truncate=false;
     }
     /**
      * Run the database seeds.

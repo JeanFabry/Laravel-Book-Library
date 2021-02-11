@@ -16,4 +16,9 @@ class Book extends Model
         'publisher',
         'id',
     ];
+
+    function rents()
+    {
+        return $this->hasMany(Rent::class);
+    }
 }

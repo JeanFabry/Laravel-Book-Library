@@ -14,24 +14,31 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
+        $books = Book::paginate(20);
         $user = auth()->user()->user_rights;
+        $userId = auth()->user()->id;
         return view("/dashboard", [
             'books' => $books,
             'user' => $user,
         ]);
     }
+    
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view("books.create");
+        $user = $request->user()->user_rights;
+        if ($user =="admin") {
+            return view('books.create', compact('user'));
+        } else {
+            return redirect()->route('main.index');
+       
     }
-
+    }
     /**
      * Store a newly created resource in storage.
      *

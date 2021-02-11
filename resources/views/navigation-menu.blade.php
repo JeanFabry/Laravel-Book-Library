@@ -16,14 +16,14 @@
                         {{ __('All Books') }}
                     </x-jet-nav-link>
                     @if (auth()->user()->user_rights=="client")
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('rent.show',auth()->user()->id) }}" :active="request()->routeIs('dashboard')">
                         {{ __('My Books') }}
                     </x-jet-nav-link>
                     @else
                     <x-jet-nav-link href="{{ route('main.create') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Add A Book') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('main.create') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('rent.index') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Book rented by clients') }}
                     </x-jet-nav-link>
                     @endif

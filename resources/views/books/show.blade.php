@@ -22,7 +22,7 @@
                                     <h2 class="text-gray-700 font-bold text-xl">N° of books available:
                                         {{$book->quantity}}
                                     </h2>
-                                    <a href='#' class="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">Rent
+                                    <a href='{{route("main.show",$book->id)}}' class="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">Rent
                                         this book</a>
                                 </div>
                             </div>
