@@ -16,7 +16,7 @@ class RentController extends Controller
     public function index()
     {   
         $rents = Rent::all();
-        return view('rent.rentAll', ['rents' => $rents]);
+        return view('rents.rentAll', ['rents' => $rents]);
 
         // $books = Book::all();
         // $user = auth()->user()->user_rights;
