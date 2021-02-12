@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rent;
 use App\Models\User;
+use App\Models\Book;
 use Illuminate\Http\Request;
 use Faker\Factory as Faker;
 class RentController extends Controller
@@ -46,9 +47,20 @@ class RentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request, Book $book)
     {
-       
+        $user = $request->user()->id;
+        $faker = Faker::create();
+        $rent = new Rent;
+
+        $rent->user_id = $user;
+        $rent->book_id = $request->book_id;
+        $rent->invoice_number = $faker->ean8;
+        $rent->save();
+
+        // Rent::create('book_id'= $bookId, 'user_id'=$user);
+
+        return redirect()->route('main.index');
     }
 
     /**

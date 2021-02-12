@@ -22,9 +22,15 @@
                                     <h2 class="text-gray-700 font-bold text-xl">N° of books available:
                                         {{$book->quantity}}
                                     </h2>
-                                    <!-- {{route("rent.create",$book->id)}} -->
-                                    <a href='#' class="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">Rent
-                                        this book</a>
+                                    <!--  <a href='{{route("rent.store",$book->id)}} ' class="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">Rent
+                                        this book</a> -->
+
+                                    <form action="{{ route('rent.store', $book->id)}}" method="post">
+                                        @csrf
+                                        @method('POST')
+                                        <input type="hidden" name="book_id" value="{{$book->id}}">
+                                        <button type="submit">RENT THIS BOOK</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
